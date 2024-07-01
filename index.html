@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Recipe App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="recipe.css">
+</head>
+<body>
+    <div id="app" class="container">
+        <header class="my-4">
+            <h1 class="text-center">Recipe App</h1>
+            <nav>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipebook.html">Recipe Book</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div id="search-bar" class="input-group mb-4">
+                <input type="text" id="search-input" class="form-control" placeholder="Search for recipes">
+                <div class="input-group-append">
+                    <button id="search-button" class="btn btn-primary" style="background-color: black;">Search</button>
+                </div>
+            </div>
+            <div id="popularRecipes">
+                <!-- <h2 class="mb-4">Popular Recipes</h2> -->
+                <ul id="popular-recipe-list" class="list-group">
+                    <!-- Display popular recipes here -->
+                </ul>
+            </div>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="recipe.js"></script>
+    <script>
+        document.getElementById('search-button').addEventListener('click', function() {
+            // Dummy function to add a recipe
+            const recipe = document.getElementById('search-input').value;
+            if (recipe) {
+                const recipeItem = document.createElement('li');
+                recipeItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+                recipeItem.textContent = recipe;
+                const saveButton = document.createElement('button');
+                saveButton.className = 'btn btn-success btn-sm';
+                saveButton.textContent = 'Save';
+                saveButton.addEventListener('click', function() {
+                    let savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+                    savedRecipes.push(recipe);
+                    localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+                    alert('Recipe saved to Recipe Book!');
+                });
+                recipeItem.appendChild(saveButton);
+                document.getElementById('popular-recipe-list').appendChild(recipeItem);
+            }
+        });
+    </script>
+</body>
+</html>

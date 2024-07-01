@@ -1,0 +1,256 @@
+/* /* /* body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  h1 {
+    margin: 0;
+  }
+  nav ul {
+    list-style-type: none;
+    margin: 20px;
+    padding: 0;
+  }
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  #search-bar {
+    margin-bottom: 20px;
+  }
+  #search-input {
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+  }
+  #search-button {
+    height: 40px;
+    padding: 5px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  #search-button:hover {
+    background-color: #45A049;
+  }
+  #popularRecipes {
+    margin-bottom: 20px;
+  }
+  #popularRecipes h2 {
+    margin-bottom: 10px;
+  } */
+
+
+  /* recipe.css */
+
+/* Body and Container Styling */
+/* body {
+    font-family: 'Arial', sans-serif;
+    background-color: #860f4b;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #17ee58;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header Styling */
+/* header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+}
+
+/* Navigation Styling */
+/* .nav-item {
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #007bff;
+} */
+
+/* Search Bar Styling */
+/* #search-bar {
+    margin-bottom: 30px;
+}
+
+#search-input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#search-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Section Title Styling */
+/* .section-title {
+    font-size: 1.8rem;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* List Item Styling */
+/* .list-group-item {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-group-item .btn {
+    font-size: 0.8rem;
+}
+
+.list-group-item .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+} */ */
+
+/* .list-group-item .btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}  */ */ */ */ */
+
+/* Reset and General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #007bff; /* Blue color */
+}
+
+/* Navigation Styling */
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #007bff; /* Blue color on hover */
+}
+
+/* Search Bar Styling */
+#search-bar {
+    margin-bottom: 30px;
+}
+
+#search-input {
+    width: 200px;
+    height: 40px;
+    padding: 5px 10px;
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 4px;
+}
+
+#search-button {
+    height: 40px;
+    padding: 5px 15px;
+    background-color: #007bff; /* Blue background */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#search-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Section Title Styling */
+.section-title {
+    font-size: 1.8rem;
+    color: #007bff; /* Blue color */
+    border-bottom: 2px solid #007bff; /* Blue border */
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* List Item Styling */
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dee2e6; /* Light gray border */
+    border-radius: 4px;
+}
+
+.list-group-item .btn {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.list-group-item .btn-success {
+    background-color: #28a745; /* Green color */
+    border-color: #28a745;
+    color: #fff;
+}
+
+.list-group-item .btn-success:hover {
+    background-color: #218838; /* Darker green on hover */
+    border-color: #1e7e34;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    #search-input {
+        width: 150px;
+    }
+}

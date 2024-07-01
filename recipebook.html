@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Recipe Book</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="recipe.css">
+</head>
+<body class="container my-4">
+    <header class="my-4">
+        <h1 class="text-center">Recipe Book</h1>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="recipebook.html">Recipe Book</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 class="mb-4">Saved Recipes</h2>
+        <ul id="saved-recipe-list" class="list-group">
+            <!-- Display saved recipes here -->
+        </ul>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+            const recipeList = document.getElementById('saved-recipe-list');
+            savedRecipes.forEach(function(recipe) {
+                const recipeItem = document.createElement('li');
+                recipeItem.className = 'list-group-item';
+                recipeItem.textContent = recipe;
+                recipeList.appendChild(recipeItem);
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+    let savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+    const recipeList = document.getElementById('saved-recipe-list');
+    recipeList.innerHTML = ''; // Clear previous contents
+    savedRecipes.forEach(function(recipe, index) {
+        const recipeItem = document.createElement('li');
+        recipeItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+        const recipeDetails = document.createElement('div');
+        const recipeTitle = document.createElement('h3');
+        recipeTitle.textContent = recipe.title;
+        recipeDetails.appendChild(recipeTitle);
+        const recipeImage = document.createElement('img');
+        recipeImage.src = recipe.image;
+        recipeImage.classList.add('img-thumbnail', 'mr-3');
+        recipeImage.style.width = '100px';
+        recipeDetails.appendChild(recipeImage);
+        recipeItem.appendChild(recipeDetails);
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
+        deleteButton.addEventListener('click', () => deleteRecipe(index));
+        recipeItem.appendChild(deleteButton);
+        recipeList.appendChild(recipeItem);
+    });
+});
+function deleteRecipe(index) {
+    let savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+    savedRecipes.splice(index, 1);
+    localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+    location.reload(); // Reload the page to update the list
+}
+    </script>
+</body>
+</html>
